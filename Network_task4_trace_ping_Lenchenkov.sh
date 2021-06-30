@@ -35,13 +35,13 @@ echo "Total TTL is $ttl"
 
 if [ $ttl -gt 60 ] && [ $ttl -lt 70 ]
 then
-  echo "Higly likely it\`s Linux on destination server"
+  echo "Highly likely it\`s Linux on destination server"
 elif [ $ttl -gt 120 ] && [ $ttl -lt 130 ]
 then
-  echo "Higly likely it\`s Windows on destination server"
+  echo "Highly likely it\`s Windows on destination server"
 elif [ $ttl -gt 250 ] && [ $ttl -lt 255 ]
 then
-  echo "Higly likely it\`s CISCO network device"
+  echo "Highly likely it\`s CISCO network device"
 else
   echo "Cannot identify OS, possibly custom built or tuned"
 fi
