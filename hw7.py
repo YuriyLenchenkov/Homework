@@ -6,6 +6,7 @@ with open('/etc/passwd') as csv_file:
     csv_passwd = csv.reader(csv_file, delimiter=':')
     for row in csv_passwd:
         shell.append(row[-1])
+csv_file.close()
 count_shell = Counter(shell)
 print(str(count_shell).replace('Counter({','').replace(':',' -').replace("'","").replace(',',';').replace('})',''))
 
@@ -22,4 +23,5 @@ for key, value in filter.items():
     for i in tmp_val:
         tmp_list.append(getpwnam(i).pw_uid)
         filter.update({key: str(tmp_list).replace('[','').replace(']','')})
+csv_file.close()
 print(str(filter).replace('{','').replace("'}",'').replace("'",'').replace(': ',':'))
