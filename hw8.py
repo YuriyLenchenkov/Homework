@@ -6,7 +6,7 @@ def numcheck(o):
         int(o)
     except ValueError:
         return 'Не удалось преобразовать введенный текст в число.'
-    r = int(inp)
+    r = int(o)
     if (r % 2) == 0:
         return r//2
     elif (r % 2) > 0:
