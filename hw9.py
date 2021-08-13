@@ -11,10 +11,8 @@ print(sum([i**2 for i in list(range(1, 100, 1))]) - (sum([i for i in list(range(
 # a < b < c
 # a2 + b2 = c2
 
-print([(a, b, c) for a in list(range(0, 430, 1)) for b in list(range(0, 430, 1))\
-       for c in list(range(0, 430, 1))\
-       if ((int(a)+int(b)+int(c)) == 1000) and (int(a)**2 + int(b)**2 == int(c)**2) and\
-       (int(a) < int(b) and int(b) < int(c))])
+print([(a, b, 1000 - int(a) - int(b)) for a in list(range(0, 1000, 1)) for b in list(range(0, 1000, 1))\
+    if (int(a) < int(b) and int(b) < (1000 - int(a) - int(b)) and int(a)**2 + int(b)**2 == ((1000 - int(a) - int(b))**2))])
 
 
 # The series, 11 + 22 + 33 + ... + 1010 = 10405071317.
