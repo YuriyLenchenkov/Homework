@@ -15,8 +15,8 @@ print([(a, b, 1000 - int(a) - int(b)) for a in list(range(0, 1000, 1)) for b in 
     if (int(a) < int(b) and int(b) < (1000 - int(a) - int(b)) and int(a)**2 + int(b)**2 == ((1000 - int(a) - int(b))**2))])
 
 
-# The series, 11 + 22 + 33 + ... + 1010 = 10405071317.
-# Find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000.
+# The series, 1^1 + 2^2 + 3^3 + ... + 10^10 = 10405071317.
+# Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
 
 print(str(sum([a**i for a in list(range(1, 1001, 1)) for i in list(range(1, 1001, 1))]))[-10:])
 
