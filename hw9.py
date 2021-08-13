@@ -18,7 +18,7 @@ print([(a, b, 1000 - int(a) - int(b)) for a in list(range(0, 1000, 1)) for b in 
 # The series, 11 + 22 + 33 + ... + 1010 = 10405071317.
 # Find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000.
 
-print(str(sum([a**i for a in list(range(1, 1001, 1)) for i in list(range(1,1001,1))]))[-7:])
+print(str(sum([a**i for a in list(range(1, 1001, 1)) for i in list(range(1, 1001, 1))]))[-10:])
 
 
 # An irrational decimal fraction is created by concatenating the positive integers:
