@@ -1,0 +1,16 @@
+модуль Pickle позволяет как сохранить в двоичном виде объекты python,
+так и загрузить ранее сохраненные объекты. В отличии от JSON, который
+также можно использовать для сохранения и обмена объектами, pickle не
+является текстовым. Загрузка объектов с помощью pickle является
+небезопасной, так как загружается поток байт, в котором, потенциально,
+может присутствовать зловредный код, поэтому следуюет пользоваться только
+доверенными источниками, либо "песочницей" для тестирования.
+
+
+Pickle module allows to export or import python-specific objects as
+binary stream. Unlike JSON, that are also serves for data exchange,
+pickle objects are not human-readable.
+Importing with Pickle are higly insecure because of operations with binary
+stream and it can potentialy contain malicious code, so it`s higly
+recommended to use only trusted sources or use isolated sandbox environment
+for testing.
