@@ -16,13 +16,24 @@ def min_num(o):
 # input numbers from user
 inp = (input('Please enter space-delimited non-negative integer numbers: ')).split(' ')
 inp_int = list(map(int, inp))
-# print(inp_int)
+#print(inp_int[0])
 # Exceptions catching
 # catching negative numbers
 for i in inp:
     if int(i) < 0:
         print('negative number exists, please enter again')
         exit()
+if len(inp) < 2:
+    if (int(inp[0]) == 1):
+        print('entered 1, it`s minimal non-negative integer number')
+        exit()
+    elif (int(inp[0]) == 0):
+        print("entered 0 it`s againt the rules!")
+        exit()
+    if (int(inp[0])>=2):
+        print('missed number is ', int(inp[0])-int(inp[0])+1)
+        exit()
+
 # catching duplicates
 #d = {}
 #for i in inp:
