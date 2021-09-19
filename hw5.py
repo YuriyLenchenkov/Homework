@@ -15,8 +15,13 @@ def min_num(o):
             return sort[k] + 1
 # input numbers from user
 inp = (input('Please enter space-delimited non-negative integer numbers: ')).split(' ')
+#print(inp)
+for i in inp:
+    if not i.isdigit():
+        inp.remove(i)
+#print(inp)
 inp_int = list(map(int, inp))
-#print(inp_int[0])
+
 # Exceptions catching
 # catching negative numbers
 for i in inp:
