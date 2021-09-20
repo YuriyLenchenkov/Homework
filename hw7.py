@@ -1,26 +1,21 @@
 #!/usr/bin/env python3
 import csv
+import subprocess
 from collections import Counter
 shell = []
+user = []
 with open('/etc/passwd') as csv_file:
     csv_passwd = csv.reader(csv_file, delimiter=':')
     for row in csv_passwd:
         shell.append(row[-1])
+        user.append(row[0])
 count_shell = Counter(shell)
-print(str(count_shell).replace('Counter({','').replace(':',' -').replace("'","").replace(',',';').replace('})',''))
+print(str(count_shell).replace('Counter({', '').replace(':', ' -').replace("'", "").replace(',', ';').replace('})', ''))
+print("\n")
 
-from pwd import getpwnam
-groups = {}
-with open('/etc/group') as csv_file:
-    csv_users = csv.reader(csv_file, delimiter=':')
-    for row in csv_users:
-        groups.update({row[0]:row[-1]})
-filter = {key: value for key, value in groups.items() if value != ''}
-for key, value in filter.items():
-    tmp_val = value.split(',')
-    tmp_list = []
-    for i in tmp_val:
-        tmp_list.append(getpwnam(i).pw_uid)
-        filter.update({key: str(tmp_list).replace('[','').replace(']','')})
+for i in user:
 
-print(str(filter).replace('{','').replace("'}",'').replace("'",'').replace(': ',':'))
+    command = "id -G " + i
+    a = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+    print(i+":", str(a.communicate()).replace("(b","").replace("'","").replace("\\n, None)","").replace(" ",", ")+"; ",\
+        end="")
