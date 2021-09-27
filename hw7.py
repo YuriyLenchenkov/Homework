@@ -19,7 +19,7 @@ with open('/etc/group') as csv_file:
     for row in csv_group:
         if len(row[3]) == 0:
             gr_empty.update({row[0]:row[2]})
-    gr_empty_str = str(gr_empty).replace("': '", ":").replace("'","").replace("{","").replace("}","")
+    gr_empty_str = str(gr_empty).replace("': '", ": ").replace("'","").replace("{","").replace("}","").replace(",",";")
     print(gr_empty_str, end="")
 
 for i in user:
